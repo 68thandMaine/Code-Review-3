@@ -19,3 +19,8 @@ Behavior 2:
 A number that contains 0 should be outputted as the string "Beep"
 Input: 101
 Expected output: Beep
+
+Behavior 3:
+A number that is divisible by 3 should return a string of text that says I'm sorry Dave, I can't do that.
+Input: 30
+Expected output: I'm sorry Dave, I can't do that.
