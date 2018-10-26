@@ -1,13 +1,13 @@
+//Business logic and explanation of functions below
+
 // This function will create a range of numbers by taking a number as a parameter (num) and running it through a for loop. By starting the index at 1 instead of 0, the for loop places a range of numbers (listed as one string eg 1234 not 1, 2, 3, 4) by adding the value of i to the result array as the loop moves from 1 to num. If i = 0 then the list would be 01234.
 function count(num) {
   var result = [];
   for (var i = 0; i < num; i++) {
     result += i;
   }
-  console.log(result)
   return result.split('')
 }
-
 //This function will take a parameter and evaluate if the number it is given as an arguement contains 0. If it does then it will change the number to Beep. The function accomplishes this by using a method called .includes to evaluate whether or not the parameter contains the character 0. If there is a 0 in the string, then the empty variable result will be passed the value "beep". IF there is a 1 in the string then, using the same logic, the function will return the work Beep.
 function beepBoop(num) {
   var holder = num
@@ -43,11 +43,11 @@ function divBy3(num) {
 }
 //This function will take the user input and translate it into the appropriate message depending on the range of numbers.
 
-//Not returning  information correctly if number is larger than 10
-function machine(num) {
+//Not returning  information correctly. The modulo operation sets 0 to the I'm sorry string instead of beep
+function converter(num) {
   var result = [];
   var arr = count(num)
-  for (var i = 0; i <= arr.length; i++) {
+  for (var i = 1; i <= arr.length; i++) {
 
   if (i % 3 === 0) {
       result.push(" I'm sorry, Dave. I'm afraid I can't do that")
@@ -58,18 +58,19 @@ function machine(num) {
   };
   console.log(arr)
   console.log(result)
+  result.unshift("Boop")
   return result
 };
 
 
 
-
+// UI logic
 
 
 $(document).ready(function() {
   $("#form1").submit(function(event) {
     event.preventDefault();
     var input = $("#userInput").val();
-    $('#results').text(machine(input));
+    $('#results').text(converter(input));
   });
 });
