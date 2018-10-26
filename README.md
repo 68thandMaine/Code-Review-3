@@ -32,7 +32,7 @@ Expected output: I'm sorry Dave, I can't do that.
 
 Known Bugs:
 
-As of 1:13pm 10/26 the app will work only up to the number 10 before the app loses the ability to recognize if a number contains a zero or a one.
+As of 3:48 on 10/26 the function will return all of the expected outputs except for position 0. The rules for the app state that the any number containing 0 must display beep. Right now number 0 is printed as "I'm sorry...." because 0 % 3 === 0 is true.
 
 Setup:
 

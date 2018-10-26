@@ -9,16 +9,18 @@ function count(num) {
 }
 
 //This function will take a parameter and evaluate if the number it is given as an arguement contains 0. If it does then it will change the number to Beep. The function accomplishes this by using a method called .includes to evaluate whether or not the parameter contains the character 0. If there is a 0 in the string, then the empty variable result will be passed the value "beep". IF there is a 1 in the string then, using the same logic, the function will return the work Beep.
-function beep(num) {
+function beepBoop(num) {
   var holder = num
-  if (num.includes('1')) {
-    return "Beep";
+  var str = num.toString();
+  if (str.includes('1')) {
+    return " Beep";
+  } else if (str.includes('0')) {
+    return " Boop";
   } else {
-    return holder
-  };
-  };
-
-
+    return " " + holder
+  }
+};
+//Boop function refactored into beepBoop
 function boop(num) {
   var holder = num;
   if (num.includes('0')) {
@@ -28,17 +30,14 @@ function boop(num) {
   }
   console.log(result)
   return result
-  };
-
-
-
+};
 //This function will take a number and determine if it is divisible by 3. This is accomplished by checking to see if the parameter has a remainder of 0 when it is divided by 3. If true the result displays the text. If false the number is returned. DOES NOT WORK FOR MULTIPLE ENTRIES
 function divBy3(num) {
   var result = [];
   if (num % 3 === 0) {
     return "I'm sorry, Dave. I'm afraid I can't do that.";
   } else {
-    result.push(num);
+    result.push(" " + num);
   }
   return result
 }
@@ -50,20 +49,18 @@ function machine(num) {
   var arr = count(num)
   for (var i = 0; i <= arr.length; i++) {
 
-    if (i % 3 === 0) {
+  if (i % 3 === 0) {
       result.push(" I'm sorry, Dave. I'm afraid I can't do that")
-    } else if (i.includes('1')){
-      var beeps = beep(num)
-      result.push(beeps);
-    } else if (i.includes('0')){
-      result.push(" " + boop(num));
-    };
-    console.log(arr)
-    console.log(result)
-    return result
+    } else {
+      var temp = beepBoop(i)
+      result.push(temp)
+    }
   };
-
+  console.log(arr)
+  console.log(result)
+  return result
 };
+
 
 
 
