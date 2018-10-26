@@ -3,6 +3,7 @@ Beep Boop Machine
 Code review # 3 for Epicodus
 
 By: Chris Rudnicky
+With additional help from StackOverflow, mdn developer documentaion, and Epicodus lessons
 
 Description:
 
@@ -32,7 +33,7 @@ Expected output: I'm sorry Dave, I can't do that.
 
 Known Bugs:
 
-As of 3:48 on 10/26 the function will return all of the expected outputs except for position 0. The rules for the app state that the any number containing 0 must display beep. Right now number 0 is printed as "I'm sorry...." because 0 % 3 === 0 is true.
+To account for i['0'] % 3 === 0 I added a condition that pushes the word Boop to index 0 of the range array if the range is greater than 1. If a user enters 1 to the input field without this condition then the return result will be the I'm sorry statement. By prepending a variable into the array once the length is greater than 1, the program works as intended.
 
 Setup:
 
@@ -47,3 +48,32 @@ Bootstrap
 html
 Javascript
 jquery
+
+
+Support/Contact information:
+
+chrisrudnicky@gmail.com
+
+MIT License
+
+Copyright (c) [year] [fullname]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Copyright (c) 2018 {Chris Rudnicky}

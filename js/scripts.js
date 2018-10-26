@@ -8,6 +8,7 @@ function count(num) {
   }
   return result.split('')
 }
+
 //This function will take a parameter and evaluate if the number it is given as an arguement contains 0. If it does then it will change the number to Beep. The function accomplishes this by using a method called .includes to evaluate whether or not the parameter contains the character 0. If there is a 0 in the string, then the empty variable result will be passed the value "beep". IF there is a 1 in the string then, using the same logic, the function will return the work Beep.
 function beepBoop(num) {
   var holder = num
@@ -20,6 +21,7 @@ function beepBoop(num) {
     return " " + holder
   }
 };
+
 //Boop function refactored into beepBoop
 function boop(num) {
   var holder = num;
@@ -28,9 +30,9 @@ function boop(num) {
   } else {
     return holder
   }
-  console.log(result)
   return result
 };
+
 //This function will take a number and determine if it is divisible by 3. This is accomplished by checking to see if the parameter has a remainder of 0 when it is divided by 3. If true the result displays the text. If false the number is returned. DOES NOT WORK FOR MULTIPLE ENTRIES
 function divBy3(num) {
   var result = [];
@@ -41,36 +43,40 @@ function divBy3(num) {
   }
   return result
 }
-//This function will take the user input and translate it into the appropriate message depending on the range of numbers.
 
-//Not returning  information correctly. The modulo operation sets 0 to the I'm sorry string instead of beep
+// This function checks to see if the input value is a number
+function valueChecker(num) {
+  if (isNaN(num)) {
+    alert("Not a valid entry!")
+  }
+}
+
+//This function will take the user input and translate it into the appropriate message depending on the range of numbers.
 function converter(num) {
   var result = [];
-  var arr = count(num)
+  var check = valueChecker(num);
+  var arr = count(num);
   for (var i = 1; i <= arr.length; i++) {
-
-  if (i % 3 === 0) {
+     if (i % 3 === 0) {
       result.push(" I'm sorry, Dave. I'm afraid I can't do that")
     } else {
-      var temp = beepBoop(i)
-      result.push(temp)
+      var numberSwitch = beepBoop(i)
+      result.push(numberSwitch)
     }
   };
-  console.log(arr)
-  console.log(result)
-  result.unshift("Boop")
+  if (result.length > 1) {
+      result.unshift("Boop")
+  }
   return result
 };
 
 
+  // UI logic
 
-// UI logic
-
-
-$(document).ready(function() {
-  $("#form1").submit(function(event) {
-    event.preventDefault();
-    var input = $("#userInput").val();
-    $('#results').text(converter(input));
+  $(document).ready(function() {
+    $("#form1").submit(function(event) {
+      event.preventDefault();
+      var input = $("#userInput").val();
+      $('#results').text(converter(input));
+    });
   });
-});
