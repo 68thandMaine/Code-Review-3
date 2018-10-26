@@ -21,6 +21,29 @@ Input: 101
 Expected output: Beep
 
 Behavior 3:
+A number that contains 0 should be outputted as the string "Boop"
+Input: 111
+Expected output: Boop
+
+Behavior 4:
 A number that is divisible by 3 should return a string of text that says I'm sorry Dave, I can't do that.
 Input: 30
 Expected output: I'm sorry Dave, I can't do that.
+
+Known Bugs:
+
+As of 1:13pm 10/26 the app will work only up to the number 10 before the app loses the ability to recognize if a number contains a zero or a one.
+
+Setup:
+
+Clone this repository
+
+Click and drag the cloned folder to the internet explorer icon on your computer to open.
+
+
+Technologies Used:
+
+Bootstrap
+html
+Javascript
+jquery
